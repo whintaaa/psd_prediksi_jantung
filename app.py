@@ -270,13 +270,30 @@ with modeling:
                 **Rumus untuk Klasifikasi Random Forest:**
             """)
     st.latex(r'H(x) = \text{{mode}}(h_1(x), h_2(x), \ldots, h_N(x))')
+
+    st.write("""
+            Rumus ini, sesuai dengan prinsip mayoritas voting pada ensambel model seperti Random Forest. Model ensambel, seperti Random Forest, cenderung memberikan performa yang baik dalam berbagai jenis dataset, termasuk dataset kesehatan seperti "Heart failure clinical records".
+
+            Dalam kasus dataset kesehatan seperti ini, Random Forest bisa menjadi pilihan yang baik karena:
+            
+            1. Robust terhadap Overfitting: Random Forest mampu mengatasi masalah overfitting yang mungkin muncul pada pohon keputusan tunggal, karena hasil mayoritas dari banyak pohon keputusan.
+            
+            2. Tidak Sensitif terhadap Outliers: Random Forest dapat menangani data yang tidak seimbang dan keberadaan outlier dalam dataset.
+            
+            3. Interpretability: Meskipun Random Forest cenderung tidak seinterpretatif pohon keputusan tunggal, tetapi masih memberikan pemahaman yang baik tentang pentingnya fitur dalam membuat keputusan.
+            
+            4. Handling Fitur Numerik dan Kategorikal: Random Forest dapat menangani baik fitur numerik maupun kategorikal tanpa memerlukan transformasi khusus.
+            
+            5. Performa yang Baik secara Umum: Random Forest umumnya memberikan performa yang baik tanpa perlu penyesuaian parameter yang terlalu rumit.
+
+            """)
     
-    best_model = create_model('rf')
+    # best_model = create_model('rf')
 
     # Simpan model terbaik ke dalam file pickle
     model_filename = 'best_model.pkl'
-    with open(model_filename, 'wb') as file:
-        pickle.dump(best_model, file)
+    # with open(model_filename, 'wb') as file:
+    #   pickle.dump(best_model, file)
 
     # Load model dari file pickle
     with open(model_filename, 'rb') as file:
