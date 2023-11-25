@@ -236,7 +236,7 @@ with modeling:
                 Berikut implementasi pycaret untuk mencari model terbaik untuk memprediksi resiko gagal jantung pada pasien:
             """)
     # Bandingkan model dan cari yang terbaik
-    best_model = compare_models()
+    # best_model = compare_models()
     st.write(best_model)
     local_image_path = "img/model.png"
     local_image = Image.open(local_image_path)
