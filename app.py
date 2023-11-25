@@ -237,7 +237,7 @@ with modeling:
             """)
     # Bandingkan model dan cari yang terbaik
     # best_model = compare_models()
-    st.write(best_model)
+    # st.write(best_model)
     local_image_path = "img/model.png"
     local_image = Image.open(local_image_path)
     st.image(local_image, caption="Model terbaik", use_column_width=True)
