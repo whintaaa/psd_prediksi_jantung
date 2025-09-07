@@ -22,7 +22,6 @@ def progress():
 st.title("Proyek Sains Data")
 st.write("Analisis dan Prediksi pada dataset Heart failure clinical records Menggunakan Pycaret")
 st.write('Nama : Whinta Virginia Putri')
-st.write('NIM : 210411100047')
 
 dataframe, preporcessing, modeling, implementation = st.tabs(
     ["Deskripsi", "Prepocessing", "Modeling", "Implementation"])
@@ -377,4 +376,5 @@ with implementation:
             st.write("Pasien berisiko mengalami DEATH_EVENT")
         else:
             st.write("Pasien tidak berisiko mengalami DEATH_EVENT")
+
 
