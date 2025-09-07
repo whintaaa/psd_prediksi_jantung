@@ -314,11 +314,18 @@ with preprocessing:
             'Jumlah': [jumlah_death_event_0, jumlah_death_event_1]
         })
         
-        fig = px.bar(before_data, x='Status', y='Jumlah', 
-                    title="Distribusi Target - Sebelum Oversampling",
-                    color='Status',
-                    color_discrete_map={'Hidup (0)': '#51cf66', 'Meninggal (1)': '#ff6b6b'})
-        st.plotly_chart(fig, use_container_width=True)
+        if PLOTLY_AVAILABLE:
+            fig = px.bar(before_data, x='Status', y='Jumlah', 
+                        title="Distribusi Target - Sebelum Oversampling",
+                        color='Status',
+                        color_discrete_map={'Hidup (0)': '#51cf66', 'Meninggal (1)': '#ff6b6b'})
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            fig, ax = plt.subplots(figsize=(8, 5))
+            colors = ['#51cf66', '#ff6b6b']
+            ax.bar(before_data['Status'], before_data['Jumlah'], color=colors)
+            ax.set_title("Distribusi Target - Sebelum Oversampling")
+            st.pyplot(fig)
         
         st.info(f"🔍 **Ketidakseimbangan Data:**  \n"
                 f"• Hidup: {jumlah_death_event_0} pasien  \n"
